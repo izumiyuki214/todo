@@ -1,0 +1,108 @@
+.todo__content {
+    margin: 0 auto;
+    max-width: 1230px;
+}
+
+.todo__success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.todo__error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.add-form {
+    margin: 100px auto;
+    height: 50px;
+    width: 70%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.add-form div {
+    height: 100%;
+
+}
+
+.add-form__til {
+    width: 60%;
+}
+
+.add-form__til-text {
+    height: 100%;
+    width: 100%;
+}
+
+.add-form__btn {
+    text-align: right;
+    width: 25%;
+}
+
+.add-form__submit {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+
+.todo-content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.todo-content__til {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.todo-content__index {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    justify-content: space-between;
+    display: flex;
+}
+
+.edit-form {
+    width: 90%;
+    padding-right: 10px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.edit-form__til {
+    width: 70%;
+}
+
+.edit-form__til-text {
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.edit-form__btn {
+    width: 10%;
+}
+
+.edit-form__btn-update {
+    width: 100%;
+    height: 30px;
+    background: #00f;
+    color: #fff;
+    border: none;
+}
+
+.dlt-form {
+    width: 9%;
+}
+
+.edit-form__btn-delete {
+    width: 100%;
+    height: 30px;
+    background: #f00;
+    color: #fff;
+    border: none;
+}

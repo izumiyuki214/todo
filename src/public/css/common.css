@@ -6,9 +6,18 @@
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header__item {
     color: #fff;
     text-decoration: none;
     font-weight: bold;

@@ -5,18 +5,21 @@
 @endsection
 
 @section('content')
-
 <div class="todo__content">
+  @if(session('message'))
   <div class="todo__success">
-    @if (session('success'))
-    {{ session('success') }}
-    
-    @endif
-    @error('content')
-    <p class="todo__error">
-        {{ $message }}
-    </p>
-    @enderror
+  {{ session('message') }}
+  </div>
+  @endif
+  @if ($errors->any())
+  <div class="todo__error">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
   <form action="todos" class="add-form" method="post">
   @csrf
     <div class="add-form__til">

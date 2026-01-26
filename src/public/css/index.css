@@ -4,13 +4,19 @@
 }
 
 .todo__success {
+    padding: 10px 30px;
     background: #d1e7dd;
     color: #0f5132;
 }
 
 .todo__error {
+    padding: 10px 30px;
     background: #f8d7da;
     color: #842029;
+}
+
+.todo__error ul {
+    margin: 0;
 }
 
 .add-form {

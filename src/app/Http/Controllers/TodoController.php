@@ -17,19 +17,19 @@ class TodoController extends Controller
     public function store(TodoRequest $request) {
         $form = $request->only('content');
         Todo::create($form);
-        return redirect('/');
+        return redirect('/')->with('message', 'Todoを作成しました');
     }
 
     // 更新機能
     public function update(TodoRequest $request) {
         $form = $request->only('content');
         Todo::find($request->id)->update($form);
-        return redirect('/');
+        return redirect('/')->with('message', 'Todoを更新しました');
     }
 
     // 削除機能
     public function destroy(Request $request) {
         Todo::find($request->id)->delete();
-        return redirect('/');
+        return redirect('/')->with('message', 'Todoを削除しました');
     }
 }

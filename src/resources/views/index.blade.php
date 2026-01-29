@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-<div class="todo__content">
+<div class="todo__alert">
   @if(session('message'))
   <div class="todo__success">
-  {{ session('message') }}
+    {{ session('message') }}
   </div>
   @endif
   @if ($errors->any())
@@ -20,18 +20,49 @@
     </ul>
   </div>
   @endif
-  
+</div>
+<div class="todo__content">
+  <div class="section__title">
+    <h2>新規作成</h2>
+  </div>
   <form action="todos" class="add-form" method="post">
   @csrf
-    <div class="add-form__til">
-      <input class="add-form__til-text" type="text" name="content">
+    <div class="add-form__item">
+      <input
+        class="create-form__item-input"
+        type="text"
+        name="content"
+        value="{{ old('content') }}"
+      />
+      <select class="create-form__item-select" name="" id="">
+        @foreach
+        <option value="">{{}}</option>
+        @endforeach
+      </select>
     </div>
-    <div class="add-form__btn">
+    <div class="add-form__button">
       <button class="add-form__submit">作成</button>
     </div>
   </form>
-  <div class="todo-content">
-    <h2 class="todo-content__til">Todo</h2>
+  <div class="section__title">
+    <h2>Todo検索</h2>
+  </div>
+  <form action="" class="search-form">
+    <div class="search-form__item">
+      <input type="text" class="search-form__item-input">
+      <select name="" id="">
+        <option value=""></option>
+      </select>
+    </div>
+    <div class="search-form__button">
+      <button class="search-form__button-submit">検索</button>
+    </div>
+  </form>
+  <div class="todo-table">
+    <div class="todo-content__row">
+      <span class="todo-content__row-span">Todo</span>
+      <span class="todo-content__row-span">カテゴリ</span>
+    </div>
     <div class="todo-content__element">
         @if (!empty($todos))
         @foreach ($todos as $todo)
@@ -39,8 +70,11 @@
             <form action="todos/update?id={{ $todo->id }}" class="edit-form" method="post">
                 @csrf
                 @method('PATCH')
-                <div class="edit-form__til">
+                <div class="edit-form__item">
                     <input class="edit-form__til-text" type="text" name="content" value="{{ $todo->content }}" />
+                </div>
+                <div class="edit-form__item">
+                  <p class="edit-form__item-p"></p>
                 </div>
                 <div class = "edit-form__btn">
                     <button class="edit-form__btn-update">更新</button>

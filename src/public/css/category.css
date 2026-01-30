@@ -1,4 +1,4 @@
-.category__alert--success {
+.category__alert--session {
     padding: 10px 30px;
     background: #d1e7dd;
     color: #0f5132;
@@ -106,6 +106,10 @@
     background: #00f;
     color: #fff;
     border: none;
+}
+
+.delete-form {
+    width: 90%;
 }
 
 .delete-form__button-submit {

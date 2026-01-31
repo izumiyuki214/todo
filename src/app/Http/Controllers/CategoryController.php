@@ -20,4 +20,17 @@ class CategoryController extends Controller
         Category::create($category);
         return redirect('/categories')->with('message', 'カテゴリを作成しました');
     }
+
+    // 編集機能
+    public function update(CategoryRequest $request) {
+        $category = $request->only(['name']);
+        Category::find($request->id)->update($category);
+        return redirect('/categories')->with('message', 'カテゴリを更新しました');
+    }
+
+    // 削除機能
+    public function destroy(request $request) {
+        Category::find($request->id)->delete();
+        return redirect('/categories')->with('message', 'カテゴリを削除しました');
+    }
 }

@@ -1,3 +1,5 @@
+
+
 .todo__content {
     margin: 0 auto;
     padding: 30px 15px;
@@ -35,7 +37,7 @@
 }
 
 .add-form__item, .search-form__item {
-    /* display: flex; */
+    display: flex;
     width: 70%;
 }
 
@@ -57,7 +59,7 @@
     appearance: none;
 }
 
-.create-form__button, .search-form__button {
+.add-form__button, .search-form__button {
     width: 20%;
 }
 
@@ -75,7 +77,7 @@
 .todo-table {
     width: 70%;
     margin: 30px auto;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .todo-content__row {
@@ -102,7 +104,8 @@
 }
 
 .edit-form__item {
-    width: 35%;
+    width: 30%;
+    height: 30px;
 }
 
 .edit-form__til-text {
@@ -114,6 +117,9 @@
 }
 
 .edit-form__item-p {
+    margin-top: 5px;
+    margin-left: 40px;
+    height: 30px;
     text-align: left;
     font-size: 13px;
 }

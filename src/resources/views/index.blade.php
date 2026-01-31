@@ -34,9 +34,9 @@
         name="content"
         value="{{ old('content') }}"
       />
-      <select class="create-form__item-select" name="" id="">
-        @foreach
-        <option value="">{{}}</option>
+      <select class="create-form__item-select" name="category_id">
+        @foreach($categories as $category)
+        <option value="{{ $category['id'] }}">{{ $category -> name }}</option>
         @endforeach
       </select>
     </div>
@@ -47,11 +47,14 @@
   <div class="section__title">
     <h2>Todo検索</h2>
   </div>
-  <form action="" class="search-form">
+  <form action="/todos/search" class="search-form" class="get">
+  @csrf
     <div class="search-form__item">
-      <input type="text" class="search-form__item-input">
-      <select name="" id="">
-        <option value=""></option>
+      <input type="text" class="search-form__item-input" name="keyword" value="{{ old('keyword') }}">
+      <select class="search-form__item-select" name="category_id">
+      @foreach ($categories as $category)
+        <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+      @endforeach
       </select>
     </div>
     <div class="search-form__button">
@@ -74,7 +77,7 @@
                     <input class="edit-form__til-text" type="text" name="content" value="{{ $todo->content }}" />
                 </div>
                 <div class="edit-form__item">
-                  <p class="edit-form__item-p"></p>
+                    <p class="edit-form__item-p">{{ $todo['category']['name'] }}</p>
                 </div>
                 <div class = "edit-form__btn">
                     <button class="edit-form__btn-update">更新</button>
